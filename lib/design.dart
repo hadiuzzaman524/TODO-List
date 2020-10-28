@@ -84,6 +84,12 @@ class ToDoTopBarDesign extends StatelessWidget {
               fontWeight: FontWeight.w900,
             ),
           ),
+          Text(
+            '12 task ',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
     );

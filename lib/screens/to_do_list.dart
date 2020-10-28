@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/bottom_sheet.dart';
 import 'package:to_do_list/design.dart';
+
 
 class ToDoScreen extends StatelessWidget {
   @override
@@ -10,9 +12,16 @@ class ToDoScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.cyan,
           onPressed: () {
-            print('click');
+            showModalBottomSheet(
+              context: context,
+              builder: (context) => BottomSheet_(),
+            );
           },
-          child: Icon(Icons.add,color: Colors.white,size: 30,),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 30,
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
