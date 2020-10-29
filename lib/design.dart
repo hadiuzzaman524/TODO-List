@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/list_view_item.dart';
 import 'list_item.dart';
 
 class ToDoBottomDesign extends StatelessWidget {
@@ -6,35 +7,18 @@ class ToDoBottomDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30.0),
-              topRight: Radius.circular(30.0),
-            ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
           ),
-          child: Container(
-            margin: EdgeInsets.only(top: 20.0),
-            child: ListView(
-              children: [
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-                ToDoItem(),
-              ],
-            ),
-          )),
+        ),
+        child: ListViewItem(),
+      ),
     );
   }
 }
-
 
 class ToDoTopBarDesign extends StatelessWidget {
   @override
