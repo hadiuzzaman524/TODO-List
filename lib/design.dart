@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/list_view_item.dart';
+import 'package:to_do_list/togle_check.dart';
 import 'list_item.dart';
 
 class ToDoBottomDesign extends StatelessWidget {
+
+  List<Toggle> itemlist;
+  ToDoBottomDesign({this.itemlist});
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -14,7 +19,7 @@ class ToDoBottomDesign extends StatelessWidget {
             topRight: Radius.circular(30.0),
           ),
         ),
-        child: ListViewItem(),
+        child: ListViewItem(itemList: itemlist,),
       ),
     );
   }

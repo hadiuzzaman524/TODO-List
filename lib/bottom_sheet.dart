@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/list_view_item.dart';
 
 class BottomSheet_ extends StatelessWidget {
+  final Function callBack;
+
+  BottomSheet_({this.callBack});
+
+  String task;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +41,8 @@ class BottomSheet_ extends StatelessWidget {
                 autofocus: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.cyan,
-                onChanged: (value){
+                onChanged: (value) {
+                  task = value;
 
                 },
                 decoration: InputDecoration(
@@ -46,7 +54,9 @@ class BottomSheet_ extends StatelessWidget {
               ),
               FlatButton(
                 color: Colors.cyan,
-                onPressed: () {},
+                onPressed: () {
+                  callBack(task);
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
