@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'list_item.dart';
 
 class ToDoBottomDesign extends StatelessWidget {
   @override
@@ -34,27 +35,6 @@ class ToDoBottomDesign extends StatelessWidget {
   }
 }
 
-class ToDoItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      child: ListTile(
-        leading: Text(
-          'Breakfast at 10am',
-          style: TextStyle(
-            fontWeight: FontWeight.normal,
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        ),
-        trailing: Checkbox(
-          value: false,
-        ),
-      ),
-    );
-  }
-}
 
 class ToDoTopBarDesign extends StatelessWidget {
   @override
