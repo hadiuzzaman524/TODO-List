@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/data.dart';
 import 'package:to_do_list/list_view_item.dart';
+import 'package:provider/provider.dart';
+import 'package:to_do_list/togle_check.dart';
 
 class BottomSheet_ extends StatelessWidget {
-  final Function callBack;
 
-  BottomSheet_({this.callBack});
 
   String task;
 
@@ -55,7 +56,10 @@ class BottomSheet_ extends StatelessWidget {
               FlatButton(
                 color: Colors.cyan,
                 onPressed: () {
-                  callBack(task);
+                  //callBack(task);print('hello world');
+                Provider.of<TaskData>(context).addItem(task);
+                Navigator.pop(context);
+
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),

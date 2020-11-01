@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:to_do_list/bottom_sheet.dart';
 import 'package:to_do_list/design.dart';
 import 'package:to_do_list/togle_check.dart';
+import 'package:to_do_list/data.dart';
 
 class ToDoScreen extends StatefulWidget {
   @override
@@ -9,13 +11,11 @@ class ToDoScreen extends StatefulWidget {
 }
 
 class _ToDoScreenState extends State<ToDoScreen> {
-  List<Toggle> itemList = [
-    Toggle(title: 'Buy a Shart'),
-    Toggle(title: 'Buy a car'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    /*
+    ChangeNotifierProvider supply data every where.
+     */
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.cyan,
@@ -24,20 +24,7 @@ class _ToDoScreenState extends State<ToDoScreen> {
           onPressed: () {
             showModalBottomSheet(
               context: context,
-              builder: (context) => BottomSheet_(
-                /*
-                return e callback value for add item in list
-                 */
-                callBack: (value) {
-                  if(value!=null)
-                  setState(() {
-                    itemList.add(
-                      Toggle(title: value),
-                    );
-                  });
-                  Navigator.pop(context);
-                },
-              ),
+              builder: (context) => BottomSheet_(),
             );
           },
           child: Icon(
@@ -56,9 +43,7 @@ class _ToDoScreenState extends State<ToDoScreen> {
             /*
             passed list in everywhere
              */
-            ToDoBottomDesign(
-              itemlist: itemList,
-            ),
+            ToDoBottomDesign(),
           ],
         ),
       ),

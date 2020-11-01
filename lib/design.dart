@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/data.dart';
 import 'package:to_do_list/list_view_item.dart';
-import 'package:to_do_list/togle_check.dart';
-import 'list_item.dart';
+import 'package:provider/provider.dart';
 
 class ToDoBottomDesign extends StatelessWidget {
-
-  List<Toggle> itemlist;
-  ToDoBottomDesign({this.itemlist});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,7 @@ class ToDoBottomDesign extends StatelessWidget {
             topRight: Radius.circular(30.0),
           ),
         ),
-        child: ListViewItem(itemList: itemlist,),
+        child: ListViewItem(),
       ),
     );
   }
@@ -54,7 +51,7 @@ class ToDoTopBarDesign extends StatelessWidget {
             ),
           ),
           Text(
-            '12 task ',
+            '${Provider.of<TaskData>(context).itemList.length} task ',
             style: TextStyle(
               color: Colors.white,
             ),
