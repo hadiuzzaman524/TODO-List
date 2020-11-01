@@ -4,14 +4,16 @@ class ToDoItem extends StatelessWidget {
 
   final isChecked;
   final Function callBack;
+  final Function deleteCall;
   final title;
-  ToDoItem({this.title,this.isChecked,this.callBack});
+  ToDoItem({this.title,this.isChecked,this.callBack,this.deleteCall});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: ListTile(
+        onLongPress: deleteCall,
         leading: Text(
           title,
           style: TextStyle(
