@@ -1,5 +1,5 @@
-# TODO List Flutter Application
- Building with this application i can learn about state management,powerfull provider package,better about designing concept and so more. I can add some screen shoot below
+# TODO List 
+This is flutter application works on both Android and IOS. Using this application you can easily maintain your TODO. You can add tasks, delete tasks, and so on with beautiful UI.
 
 # Screenshot 1: Add item in TODO list
 
